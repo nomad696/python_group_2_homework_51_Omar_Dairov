@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Films</title>
+    <style>
+        .film {
+            display: inline-block;
+            margin: 15px;
+            border: 1px solid #eee;
+            box-shadow: 0 2px 2px #ccc;
+            width: 300px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="container"></div>
+
+<script src="https://fb.me/react-15.0.0.js"></script>
+<script src="https://fb.me/react-dom-15.0.0.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+
+<script type="text/babel">
+    function Film(props) {
+        return (
+            <div className="film">
+                <h1>Название: {props.title}</h1>
+                <p>Год выпуска: {props.year}</p>
+                <img src={props.src} width="200px"/>
+            </div>
+        );
+    }
+    const container = document.getElementById('container');
+
+    ReactDOM.render(<div>
+        <Film title="Last samurai" year="2000" src="img/samurai.jpg"/>
+        <Film title="The Silence of the Lambs" year="1996" src="img/lector.jpg"/>
+        <Film title="Three Idiots" year="2006" src="img/idiots.jpg"/>
+
+    </div>, container);
+
+
+</script>
+
+</body>
+</html>

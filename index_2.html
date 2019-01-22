@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Part 2</title>
+	<style>
+		.header{
+			overflow: hidden;
+			background: yellow;
+			text-align: center;
+		}
+		.sidebar{
+			margin: 0;
+			padding: 0;
+			width: 200px;
+			background-color: #f1f1f1;
+			height: 400px;
+			overflow: auto;
+			float: left;
+			text-align: center;
+		}
+		.container{
+			background: blue;
+			height: 400px;
+			overflow: auto;
+			text-align: center;
+		}
+		.footer{
+			background: #204b52;
+			width: 100%;
+			text-align: center;
+			margin-bottom: 0;
+			height: 100px;
+			overflow: auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="header"></div>
+	<div id="sidebar"></div>
+	<div id="container"></div>
+	<div id="footer"></div>
+
+
+<script src="https://fb.me/react-15.0.0.js"></script>
+<script src="https://fb.me/react-dom-15.0.0.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+
+<script type="text/babel">
+	function Header(props) {
+		return(
+			<div className="header">
+				<p>{props.title}</p>
+			</div>
+		);
+	}
+	const header = document.getElementById("header");
+
+	ReactDOM.render(<div>
+		<Header title="Крыша"/>
+	</div>, header)
+
+	function Sidebar(props) {
+		return(
+			<div className="sidebar">
+				<p>{props.title}</p>
+			</div>
+		);
+	}
+	const sidebar = document.getElementById("sidebar")
+
+	ReactDOM.render(<div>
+		<Sidebar title="Боковая панель"/>
+	</div>, sidebar)
+
+	function Container(props) {
+		return(
+			<div className="container">
+				<p>{props.title}</p>
+			</div>
+		);
+	}
+	const container = document.getElementById("container")
+	ReactDOM.render(<div>
+		<Container title="Контейнер"/>
+	</div>, container)
+
+	function Footer(props){
+		return(
+			<div className="footer">
+				<p>{props.title}</p>
+			</div>
+		);
+	}
+	const footer = document.getElementById("footer")
+	ReactDOM.render(<div>
+		<Footer title="Подвал"/>
+	</div>, footer)
+</script>
+
+</body>
+</html>
